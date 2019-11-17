@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 
 namespace AR_TASDumka
 {
 
     class DailySale
     {
-        public int ID { get; set; }
+        public int DailySaleId { get; set; }
         public DateTime SaleDate { get; set; }
         public string InvNo { get; set; }
         public double Amount { get; set; }
@@ -20,7 +21,7 @@ namespace AR_TASDumka
     }
     class Expenses
     {
-        public int ID { get; set; }
+        public int ExpensesId { get; set; }
         public DateTime ExpDate { get; set; }
         public string Particulars { get; set; }
         public double Amount { get; set; }
@@ -33,7 +34,7 @@ namespace AR_TASDumka
     }
     class BankDeposit
     {
-        public int ID { get; set; }
+        public int BankDepositId { get; set; }
         public DateTime DepoDate { get; set; }
         public string BankName { get; set; }
         public string AccountNo { get; set; }
@@ -42,59 +43,58 @@ namespace AR_TASDumka
         public string Details { get; set; }
         public string Remarks { get; set; }
     }
-    class Talioring
+
+
+    public class TalioringBooking
     {
-        public class Booking
-        {
-            public int ID;
-            public DateTime BookingDate { get; set; }
-            public string CustName { get; set; }
-            public DateTime DeliveryDate { get; set; }
-            public string BookingSlipNo { get; set; }
-            public double TotalAmount { get; set; }
-            public int TotalQty { get; set; }
-            public int ShirtQty { get; set; }
-            public double ShirtPrice { get; set; }
-            public int PantQty { get; set; }
-            public double PantPrice { get; set; }
-            public int CoatQty { get; set; }
-            public int KurtaQty { get; set; }
-            public int BundiQty { get; set; }
-            public int OthersQty { get; set; }
-            public double CoatPrice { get; set; }
-            public double BundiPrice { get; set; }
-            public double OthersPrice { get; set; }
-            public double KurtaPrice { get; set; }
-
-        }
-
-        public class Delivery
-        {
-            public int ID { get; set; }
-            public DateTime DeliveryDate { get; set; }
-            public string InvNo { get; set; }
-            public string Remarks { get; set; }
-            public double Amount { get; set; }
-
-        }
-
-        public Delivery Deliverys { get; set; }
-        public Booking TailoringBooking { get; set; }
-    }
-    class Payments 
-    {
-        public int ID{get; set;}
-        public DateTime PayDate{get; set;}
-        public string PaymentParties{get; set;}
-        public string PaymentDetails{get; set;}
-        public string Remarks{get; set;}
-        public double Amount{get; set;}
-        public string PaymentSlipNo{get; set;}
-        public string PayMode{get; set;}
+        public int TalioringBookingId { get; set; }
+        public DateTime BookingDate { get; set; }
+        public string CustName { get; set; }
+        public DateTime DeliveryDate { get; set; }
+        public string BookingSlipNo { get; set; }
+        public double TotalAmount { get; set; }
+        public int TotalQty { get; set; }
+        public int ShirtQty { get; set; }
+        public double ShirtPrice { get; set; }
+        public int PantQty { get; set; }
+        public double PantPrice { get; set; }
+        public int CoatQty { get; set; }
+        public int KurtaQty { get; set; }
+        public int BundiQty { get; set; }
+        public int OthersQty { get; set; }
+        public double CoatPrice { get; set; }
+        public double BundiPrice { get; set; }
+        public double OthersPrice { get; set; }
+        public double KurtaPrice { get; set; }
 
     }
-    class Recipets {
-        public int ID { get; set; }
+
+    public class TalioringDelivery
+    {
+        public int TalioringDeliveryId { get; set; }
+        public DateTime DeliveryDate { get; set; }
+        public string InvNo { get; set; }
+        public string Remarks { get; set; }
+        public double Amount { get; set; }
+
+    }
+
+
+    class Payments
+    {
+        public int PaymentsId { get; set; }
+        public DateTime PayDate { get; set; }
+        public string PaymentParties { get; set; }
+        public string PaymentDetails { get; set; }
+        public string Remarks { get; set; }
+        public double Amount { get; set; }
+        public string PaymentSlipNo { get; set; }
+        public string PayMode { get; set; }
+
+    }
+    class Recipets
+    {
+        public int RecipetsId { get; set; }
         public DateTime RecieptDate { get; set; }
         public string RecieptFrom { get; set; }
         public string RecieptDetails { get; set; }
@@ -103,19 +103,93 @@ namespace AR_TASDumka
         public string RecieptSlipNo { get; set; }
         public string PayMode { get; set; }
     }
-    class Attendences { }
-    class DailySaleReport
+    class Attendences
     {
-        public double DSAmount { get; set; }
+        public int AttendencesId { get; set; }
+        public string StaffName { get; set; }
+        public string Remarks { get; set; }
+        public DateTime AttDate { get; set; }
+        public string EntryTime { get; set; }
+        public double AttUnit { get; set; }
 
     }
-    class ManaulSaleReport { }
-    class TailoringReport { }
+    class DailySaleReport
+    {
+        public double DailySale { get; set; }
+        public double MonthlySale { get; set; }
+        public double YearlySale { get; set; }
+        public double WeeklySale { get; set; }
+        public double QuaterlySale { get; set; }
+
+    }
+    class ManaulSaleReport
+    {
+        public double DailySale { get; set; }
+        public double MonthlySale { get; set; }
+        public double YearlySale { get; set; }
+        public double PendingSale { get; set; }
+        public double SaleAdjustest { get; set; }
+        public double TotalFixedSale { get; set; }
+    }
+
+    class Emp
+    {
+        public int EmpId { get; set; }
+        public string StaffName { get; set; }
+        public string Mobileno { get; set; }
+        public DateTime JoiningDate { get; set; }
+
+    }
+
+    class SalaryPayment
+    {
+        public int SalaryPaymentId { get; set; }
+        public string StaffName { get; set; }
+        public string SalaryMonth { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public double Amount { get; set; }
+        public string PayMode { get; set; }
+        public string Details { get; set; }
+
+
+    }
+    class AdvancePayment
+    {
+        public int AdvancePaymentId { get; set; }
+        public string StaffName { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public double Amount { get; set; }
+        public string PayMode { get; set; }
+        public string Details { get; set; }
+    }
+    class AdvanceReceipt
+    {
+        public int AdvanceReceiptId { get; set; }
+        public string StaffName { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public double Amount { get; set; }
+        public string PayMode { get; set; }
+        public string Details { get; set; }
+    }
+
+    class TailoringReport
+    {
+        public double TodaySale { get; set; }
+        public double MonthlySale { get; set; }
+        public double YearlySale { get; set; }
+        public double QuaterlySale { get; set; }
+        public double TodayBooking { get; set; }
+        public double TodayUnit { get; set; }
+        public double MonthlyBooking { get; set; }
+        public double MonthlyUnit { get; set; }
+        public double YearlyBooking { get; set; }
+        public double YearlyUnit { get; set; }
+    }
     class TASContext : DbContext
     {
-        public TASContext() : base()
+        public TASContext() : base("DB_TAS_Dumka")
         {
-
+            Database.SetInitializer<TASContext>(new CreateDatabaseIfNotExists<TASContext>());
         }
 
         public DbSet<DailySale> DailySales { get; set; }
@@ -123,8 +197,12 @@ namespace AR_TASDumka
         public DbSet<BankDeposit> BankDeposits { get; set; }
         public DbSet<Payments> Payments { get; set; }
         public DbSet<Recipets> Recipets { get; set; }
-        public DbSet<Talioring.Booking> Bookings { get; set; }
-        public DbSet<Talioring.Delivery> Deliveries { get; set; }
+        public DbSet<TalioringBooking> TalioringBookings { get; set; }
+        public DbSet<TalioringDelivery> TalioringDeliveries { get; set; }
         public DbSet<Attendences> Attendences { get; set; }
+        public DbSet<Emp> Emps { get; set; }
+        public DbSet<AdvancePayment> AdvancePayments { get; set; }
+        public DbSet<AdvanceReceipt> AdvanceReceipts { get; set; }
+        public DbSet<SalaryPayment> SalaryPayments { get; set; }
     }
 }
