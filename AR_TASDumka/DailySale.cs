@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AR_TASDumka
 {
     class DailySale
     {
-        private int _ID;
-        DateTime dateTime;
+        private readonly int _ID;
+        private readonly DateTime SaleDate;
     }
     class Expenses
     {
