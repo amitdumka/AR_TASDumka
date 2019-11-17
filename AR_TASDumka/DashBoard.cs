@@ -58,5 +58,10 @@ namespace AR_TASDumka
             this.Close();
             Application.Exit();
         }
+
+        private void groupBox8_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
