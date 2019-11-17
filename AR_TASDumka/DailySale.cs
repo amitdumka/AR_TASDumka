@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Data.Entity;
 
 namespace AR_TASDumka
 {
+
     class DailySale
     {
         public int ID { get; set; }
@@ -29,7 +31,6 @@ namespace AR_TASDumka
         public string Remarks { get; set; }
 
     }
-
     class BankDeposit
     {
         public int ID { get; set; }
@@ -41,7 +42,6 @@ namespace AR_TASDumka
         public string Details { get; set; }
         public string Remarks { get; set; }
     }
-
     class Talioring
     {
         public class Booking
@@ -81,17 +81,50 @@ namespace AR_TASDumka
         public Delivery Deliverys { get; set; }
         public Booking TailoringBooking { get; set; }
     }
+    class Payments 
+    {
+        public int ID{get; set;}
+        public DateTime PayDate{get; set;}
+        public string PaymentParties{get; set;}
+        public string PaymentDetails{get; set;}
+        public string Remarks{get; set;}
+        public double Amount{get; set;}
+        public string PaymentSlipNo{get; set;}
+        public string PayMode{get; set;}
 
-}
-class Payments { }
-class Recipets { }
-class Attendences { }
+    }
+    class Recipets {
+        public int ID { get; set; }
+        public DateTime RecieptDate { get; set; }
+        public string RecieptFrom { get; set; }
+        public string RecieptDetails { get; set; }
+        public string Remarks { get; set; }
+        public double Amount { get; set; }
+        public string RecieptSlipNo { get; set; }
+        public string PayMode { get; set; }
+    }
+    class Attendences { }
+    class DailySaleReport
+    {
+        public double DSAmount { get; set; }
 
-class DailySaleReport {
-    public double DSAmount { get; set; }
-   
-}
-class ManaulSaleReport { }
-class TailoringReport { }
+    }
+    class ManaulSaleReport { }
+    class TailoringReport { }
+    class TASContext : DbContext
+    {
+        public TASContext() : base()
+        {
 
+        }
+
+        public DbSet<DailySale> DailySales { get; set; }
+        public DbSet<Expenses> Expenses { get; set; }
+        public DbSet<BankDeposit> BankDeposits { get; set; }
+        public DbSet<Payments> Payments { get; set; }
+        public DbSet<Recipets> Recipets { get; set; }
+        public DbSet<Talioring.Booking> Bookings { get; set; }
+        public DbSet<Talioring.Delivery> Deliveries { get; set; }
+        public DbSet<Attendences> Attendences { get; set; }
+    }
 }
