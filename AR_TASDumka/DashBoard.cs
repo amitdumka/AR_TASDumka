@@ -381,7 +381,7 @@ namespace AR_TASDumka
                     {
                         Amount = Double.Parse(txtCIHAmount.Text.Trim()),
                         dateTime = dtpCIHDate.Value,
-                       RecieptFrom = txtCIHFrom .Text,
+                        RecieptFrom = txtCIHFrom.Text,
                         SlipNo = txtCIHSlipNo.Text
                     };
                     db.CashInwards.Add(he);
@@ -403,12 +403,13 @@ namespace AR_TASDumka
             {
                 using (var db = new TASContext())
                 {
-                  OtherHomeExpense he = new OtherHomeExpense()
+                    OtherHomeExpense he = new OtherHomeExpense()
                     {
                         Amount = Double.Parse(txtOHEAmount.Text.Trim()),
                         dateTime = dtpOHEDate.Value,
                         PaidTo = txtOHEPaidTo.Text,
-                        SlipNo = txtOHESlipNo.Text, Remarks=txtOHERemarks.Text
+                        SlipNo = txtOHESlipNo.Text,
+                        Remarks = txtOHERemarks.Text
                     };
                     db.OtherHomeExpenses.Add(he);
                     db.SaveChanges();
@@ -447,7 +448,7 @@ namespace AR_TASDumka
         private void DashBoard_Load(object sender, EventArgs e)
         {
             this.LoadStaffName(false);
-            // LoadTableNameList();
+            LoadTableNameList();
         }
         private string GetPluralized(string input)
         {
@@ -455,25 +456,27 @@ namespace AR_TASDumka
 
             PluralizationService ps = PluralizationService.CreateService(System.Globalization.CultureInfo.GetCultureInfo("en-us"));
             ret = ps.Pluralize(input);
-
+            Console.WriteLine("Pul: " + ret);
             return ret;
         }
         private void btnTableUpdate_Click(object sender, EventArgs e)
         {
-            //using (var db = new TASContext())
-            //{
-            //    try
-            //    {
-            //        DbSet dS = ((DbSet)db.GetType().GetProperty(GetPluralized(cbTableList.Text)).GetValue(db, null));
-            //        dS.Load();
+            using (var db = new TASContext())
+            {
+                try
+                {
+                    DbSet dS = db.Set(db.GetType().GetProperty(GetPluralized(cbTableList.Text)).GetValue(db).GetType());
 
-            //        dgvData.DataSource = dS.Local;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Cannnot edit table: " + cbTableList.Text + Environment.NewLine + Environment.NewLine + ex.Message, "Error");
-            //    }
-            //}
+                    // DbSet dS = ((DbSet)db.GetType().GetProperty(GetPluralized(cbTableList.Text)).GetValue(db, null));
+                    dS.Load();
+
+                    dgvData.DataSource = dS.Local;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Cannnot edit table: " + cbTableList.Text + Environment.NewLine + Environment.NewLine + ex.Message, "Error");
+                }
+            }
 
         }
 
@@ -502,6 +505,77 @@ namespace AR_TASDumka
                     cbTableList.Items.Add(tableName);
                     //Console.WriteLine(tableSchema + "." + tableName);
                 }
+            }
+        }
+
+        private void btnAddDelivery_Click(object sender, EventArgs e)
+        {
+            if (btnAddDelivery.Text == "Add")
+            {
+                btnAddDelivery.Text = "Save";
+                ClearUIFields(flpDelivery);
+            }
+            else if (btnAddDelivery.Text == "Save")
+            {
+                using (var db = new TASContext())
+                {
+
+                    TalioringDelivery td = new TalioringDelivery()
+                    {
+                        Amount = Double.Parse(txtTDAmount.Text.Trim()),
+                        DeliveryDate = dtpTDDate.Value,
+                        InvNo = txtTDInvNo.Text,
+                        Remarks = txtTDRemarks.Text
+                    };
+                    db.TalioringDeliveries.Add(td);
+                    db.SaveChanges();
+                    btnAddDelivery.Text = "Add";
+                    ClearUIFields(flpDelivery);
+                }
+
+            }
+        }
+
+        private void btnAddTailoring_Click(object sender, EventArgs e)
+        {
+            if (btnAddTailoring.Text == "Add")
+            {
+                btnAddTailoring.Text = "Save";
+                ClearUIFields(tlpBooking);
+            }
+            else if (btnAddTailoring.Text == "Save")
+            {
+                using (var db = new TASContext())
+                {
+
+                    TalioringBooking td = new TalioringBooking()
+                    {
+                        TotalAmount = Double.Parse(txtTBTotalAmount.Text.Trim()),
+                        DeliveryDate = dtpTBDeliveryDate.Value,
+                        BookingDate = dtpTBDate.Value,
+                        BookingSlipNo = txtTBSlipNo.Text,
+                        BundiPrice = Double.Parse(txtBundiAmount.Text.Trim()),
+                        BundiQty = Int16.Parse(txtBundiQty.Text.Trim()),
+                        CoatPrice = Double.Parse(txtCoatAmount.Text),
+                        CoatQty = Int16.Parse(txtCoatQty.Text),
+                        CustName = txtTBCustName.Text,
+                        KurtaPrice = Double.Parse(txtKurtaAmount.Text),
+                        KurtaQty = Int16.Parse(txtKurtaQty.Text),
+                        OthersPrice = Double.Parse(txtOthersAmount.Text),
+                        PantPrice = Double.Parse(txtPantAmount.Text),
+                        ShirtPrice = Double.Parse(txtShirtAmount.Text),
+                        OthersQty = Int16.Parse(txtOthersQty.Text),
+                        PantQty = Int16.Parse(txtPantQty.Text),
+                        ShirtQty = Int16.Parse(txtShirtQty.Text),
+                        TotalQty = Int16.Parse(txtTBTotalQty.Text)
+
+                    };
+                    db.TalioringBookings.Add(td);
+                    db.SaveChanges();
+                    btnAddTailoring.Text = "Add";
+                    ClearUIFields(tlpBooking);
+                }
+
             }
         }
     }

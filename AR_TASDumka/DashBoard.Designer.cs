@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -191,13 +192,13 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.flpDelivery = new System.Windows.Forms.FlowLayoutPanel();
             this.label44 = new System.Windows.Forms.Label();
-            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.txtTDInvNo = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.txtTDAmount = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dtpTDDate = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.txtTDRemarks = new System.Windows.Forms.TextBox();
             this.btnAddDelivery = new System.Windows.Forms.Button();
             this.btnClearDelivery = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -213,26 +214,26 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.dtpTBDate = new System.Windows.Forms.DateTimePicker();
+            this.txtTBCustName = new System.Windows.Forms.TextBox();
+            this.txtTBSlipNo = new System.Windows.Forms.TextBox();
+            this.dtpTBDeliveryDate = new System.Windows.Forms.DateTimePicker();
+            this.txtTBTotalAmount = new System.Windows.Forms.TextBox();
+            this.txtShirtAmount = new System.Windows.Forms.TextBox();
+            this.txtShirtQty = new System.Windows.Forms.TextBox();
+            this.txtPantAmount = new System.Windows.Forms.TextBox();
+            this.txtPantQty = new System.Windows.Forms.TextBox();
+            this.txtCoatAmount = new System.Windows.Forms.TextBox();
+            this.txtCoatQty = new System.Windows.Forms.TextBox();
+            this.txtBundiAmount = new System.Windows.Forms.TextBox();
+            this.txtBundiQty = new System.Windows.Forms.TextBox();
+            this.txtKurtaAmount = new System.Windows.Forms.TextBox();
+            this.txtKurtaQty = new System.Windows.Forms.TextBox();
+            this.txtOthersAmount = new System.Windows.Forms.TextBox();
+            this.txtOthersQty = new System.Windows.Forms.TextBox();
             this.btnAddTailoring = new System.Windows.Forms.Button();
             this.btnClearTailoring = new System.Windows.Forms.Button();
-            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.txtTBTotalQty = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -358,6 +359,7 @@
             this.cbTableList = new System.Windows.Forms.ComboBox();
             this.btnTableUpdate = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.tASContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -406,12 +408,13 @@
             this.tabPage6.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tASContextBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 49);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 60);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -425,7 +428,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(3204, 924);
+            this.splitContainer1.Size = new System.Drawing.Size(3204, 913);
             this.splitContainer1.SplitterDistance = 689;
             this.splitContainer1.SplitterWidth = 11;
             this.splitContainer1.TabIndex = 0;
@@ -921,7 +924,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(2504, 924);
+            this.tabControl1.Size = new System.Drawing.Size(2504, 913);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -933,7 +936,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabPage1.Size = new System.Drawing.Size(2484, 866);
+            this.tabPage1.Size = new System.Drawing.Size(2484, 855);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Income";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2246,13 +2249,13 @@
             // flpDelivery
             // 
             this.flpDelivery.Controls.Add(this.label44);
-            this.flpDelivery.Controls.Add(this.textBox38);
+            this.flpDelivery.Controls.Add(this.txtTDInvNo);
             this.flpDelivery.Controls.Add(this.label45);
-            this.flpDelivery.Controls.Add(this.textBox39);
+            this.flpDelivery.Controls.Add(this.txtTDAmount);
             this.flpDelivery.Controls.Add(this.label46);
-            this.flpDelivery.Controls.Add(this.dateTimePicker5);
+            this.flpDelivery.Controls.Add(this.dtpTDDate);
             this.flpDelivery.Controls.Add(this.label47);
-            this.flpDelivery.Controls.Add(this.textBox40);
+            this.flpDelivery.Controls.Add(this.txtTDRemarks);
             this.flpDelivery.Controls.Add(this.btnAddDelivery);
             this.flpDelivery.Controls.Add(this.btnClearDelivery);
             this.flpDelivery.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2272,13 +2275,13 @@
             this.label44.TabIndex = 0;
             this.label44.Text = "InvNo";
             // 
-            // textBox38
+            // txtTDInvNo
             // 
-            this.textBox38.Location = new System.Drawing.Point(112, 7);
-            this.textBox38.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(260, 38);
-            this.textBox38.TabIndex = 1;
+            this.txtTDInvNo.Location = new System.Drawing.Point(112, 7);
+            this.txtTDInvNo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtTDInvNo.Name = "txtTDInvNo";
+            this.txtTDInvNo.Size = new System.Drawing.Size(260, 38);
+            this.txtTDInvNo.TabIndex = 1;
             // 
             // label45
             // 
@@ -2290,13 +2293,13 @@
             this.label45.TabIndex = 2;
             this.label45.Text = "AmountPaid";
             // 
-            // textBox39
+            // txtTDAmount
             // 
-            this.textBox39.Location = new System.Drawing.Point(575, 7);
-            this.textBox39.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(260, 38);
-            this.textBox39.TabIndex = 3;
+            this.txtTDAmount.Location = new System.Drawing.Point(575, 7);
+            this.txtTDAmount.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtTDAmount.Name = "txtTDAmount";
+            this.txtTDAmount.Size = new System.Drawing.Size(260, 38);
+            this.txtTDAmount.TabIndex = 3;
             // 
             // label46
             // 
@@ -2308,13 +2311,13 @@
             this.label46.TabIndex = 4;
             this.label46.Text = "DeliveryDate";
             // 
-            // dateTimePicker5
+            // dtpTDDate
             // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(1045, 7);
-            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(527, 38);
-            this.dateTimePicker5.TabIndex = 5;
+            this.dtpTDDate.Location = new System.Drawing.Point(1045, 7);
+            this.dtpTDDate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.dtpTDDate.Name = "dtpTDDate";
+            this.dtpTDDate.Size = new System.Drawing.Size(527, 38);
+            this.dtpTDDate.TabIndex = 5;
             // 
             // label47
             // 
@@ -2326,13 +2329,13 @@
             this.label47.TabIndex = 6;
             this.label47.Text = "Remarks";
             // 
-            // textBox40
+            // txtTDRemarks
             // 
-            this.textBox40.Location = new System.Drawing.Point(1731, 7);
-            this.textBox40.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(260, 38);
-            this.textBox40.TabIndex = 7;
+            this.txtTDRemarks.Location = new System.Drawing.Point(1731, 7);
+            this.txtTDRemarks.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtTDRemarks.Name = "txtTDRemarks";
+            this.txtTDRemarks.Size = new System.Drawing.Size(260, 38);
+            this.txtTDRemarks.TabIndex = 7;
             // 
             // btnAddDelivery
             // 
@@ -2343,6 +2346,7 @@
             this.btnAddDelivery.TabIndex = 8;
             this.btnAddDelivery.Text = "Add";
             this.btnAddDelivery.UseVisualStyleBackColor = true;
+            this.btnAddDelivery.Click += new System.EventHandler(this.btnAddDelivery_Click);
             // 
             // btnClearDelivery
             // 
@@ -2393,26 +2397,26 @@
             this.tlpBooking.Controls.Add(this.label40, 8, 0);
             this.tlpBooking.Controls.Add(this.label41, 9, 0);
             this.tlpBooking.Controls.Add(this.label42, 10, 0);
-            this.tlpBooking.Controls.Add(this.dateTimePicker3, 0, 1);
-            this.tlpBooking.Controls.Add(this.textBox22, 1, 1);
-            this.tlpBooking.Controls.Add(this.textBox23, 2, 1);
-            this.tlpBooking.Controls.Add(this.dateTimePicker4, 3, 1);
-            this.tlpBooking.Controls.Add(this.textBox24, 4, 1);
-            this.tlpBooking.Controls.Add(this.textBox25, 5, 1);
-            this.tlpBooking.Controls.Add(this.textBox26, 5, 2);
-            this.tlpBooking.Controls.Add(this.textBox27, 6, 1);
-            this.tlpBooking.Controls.Add(this.textBox28, 6, 2);
-            this.tlpBooking.Controls.Add(this.textBox29, 7, 1);
-            this.tlpBooking.Controls.Add(this.textBox30, 7, 2);
-            this.tlpBooking.Controls.Add(this.textBox31, 8, 1);
-            this.tlpBooking.Controls.Add(this.textBox32, 8, 2);
-            this.tlpBooking.Controls.Add(this.textBox33, 9, 1);
-            this.tlpBooking.Controls.Add(this.textBox34, 9, 2);
-            this.tlpBooking.Controls.Add(this.textBox35, 10, 1);
-            this.tlpBooking.Controls.Add(this.textBox36, 10, 2);
+            this.tlpBooking.Controls.Add(this.dtpTBDate, 0, 1);
+            this.tlpBooking.Controls.Add(this.txtTBCustName, 1, 1);
+            this.tlpBooking.Controls.Add(this.txtTBSlipNo, 2, 1);
+            this.tlpBooking.Controls.Add(this.dtpTBDeliveryDate, 3, 1);
+            this.tlpBooking.Controls.Add(this.txtTBTotalAmount, 4, 1);
+            this.tlpBooking.Controls.Add(this.txtShirtAmount, 5, 1);
+            this.tlpBooking.Controls.Add(this.txtShirtQty, 5, 2);
+            this.tlpBooking.Controls.Add(this.txtPantAmount, 6, 1);
+            this.tlpBooking.Controls.Add(this.txtPantQty, 6, 2);
+            this.tlpBooking.Controls.Add(this.txtCoatAmount, 7, 1);
+            this.tlpBooking.Controls.Add(this.txtCoatQty, 7, 2);
+            this.tlpBooking.Controls.Add(this.txtBundiAmount, 8, 1);
+            this.tlpBooking.Controls.Add(this.txtBundiQty, 8, 2);
+            this.tlpBooking.Controls.Add(this.txtKurtaAmount, 9, 1);
+            this.tlpBooking.Controls.Add(this.txtKurtaQty, 9, 2);
+            this.tlpBooking.Controls.Add(this.txtOthersAmount, 10, 1);
+            this.tlpBooking.Controls.Add(this.txtOthersQty, 10, 2);
             this.tlpBooking.Controls.Add(this.btnAddTailoring, 0, 2);
             this.tlpBooking.Controls.Add(this.btnClearTailoring, 1, 2);
-            this.tlpBooking.Controls.Add(this.textBox37, 4, 2);
+            this.tlpBooking.Controls.Add(this.txtTBTotalQty, 4, 2);
             this.tlpBooking.Controls.Add(this.label43, 3, 2);
             this.tlpBooking.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpBooking.Location = new System.Drawing.Point(8, 38);
@@ -2535,141 +2539,141 @@
             this.label42.TabIndex = 10;
             this.label42.Text = "Others";
             // 
-            // dateTimePicker3
+            // dtpTBDate
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(8, 39);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(260, 38);
-            this.dateTimePicker3.TabIndex = 11;
+            this.dtpTBDate.Location = new System.Drawing.Point(8, 39);
+            this.dtpTBDate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.dtpTBDate.Name = "dtpTBDate";
+            this.dtpTBDate.Size = new System.Drawing.Size(260, 38);
+            this.dtpTBDate.TabIndex = 11;
             // 
-            // textBox22
+            // txtTBCustName
             // 
-            this.textBox22.Location = new System.Drawing.Point(284, 39);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(204, 38);
-            this.textBox22.TabIndex = 12;
+            this.txtTBCustName.Location = new System.Drawing.Point(284, 39);
+            this.txtTBCustName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtTBCustName.Name = "txtTBCustName";
+            this.txtTBCustName.Size = new System.Drawing.Size(204, 38);
+            this.txtTBCustName.TabIndex = 12;
             // 
-            // textBox23
+            // txtTBSlipNo
             // 
-            this.textBox23.Location = new System.Drawing.Point(512, 39);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(175, 38);
-            this.textBox23.TabIndex = 13;
+            this.txtTBSlipNo.Location = new System.Drawing.Point(512, 39);
+            this.txtTBSlipNo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtTBSlipNo.Name = "txtTBSlipNo";
+            this.txtTBSlipNo.Size = new System.Drawing.Size(175, 38);
+            this.txtTBSlipNo.TabIndex = 13;
             // 
-            // dateTimePicker4
+            // dtpTBDeliveryDate
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(746, 39);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(183, 38);
-            this.dateTimePicker4.TabIndex = 14;
+            this.dtpTBDeliveryDate.Location = new System.Drawing.Point(746, 39);
+            this.dtpTBDeliveryDate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.dtpTBDeliveryDate.Name = "dtpTBDeliveryDate";
+            this.dtpTBDeliveryDate.Size = new System.Drawing.Size(183, 38);
+            this.dtpTBDeliveryDate.TabIndex = 14;
             // 
-            // textBox24
+            // txtTBTotalAmount
             // 
-            this.textBox24.Location = new System.Drawing.Point(947, 39);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(260, 38);
-            this.textBox24.TabIndex = 15;
+            this.txtTBTotalAmount.Location = new System.Drawing.Point(947, 39);
+            this.txtTBTotalAmount.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtTBTotalAmount.Name = "txtTBTotalAmount";
+            this.txtTBTotalAmount.Size = new System.Drawing.Size(260, 38);
+            this.txtTBTotalAmount.TabIndex = 15;
             // 
-            // textBox25
+            // txtShirtAmount
             // 
-            this.textBox25.Location = new System.Drawing.Point(1223, 39);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(148, 38);
-            this.textBox25.TabIndex = 16;
+            this.txtShirtAmount.Location = new System.Drawing.Point(1223, 39);
+            this.txtShirtAmount.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtShirtAmount.Name = "txtShirtAmount";
+            this.txtShirtAmount.Size = new System.Drawing.Size(148, 38);
+            this.txtShirtAmount.TabIndex = 16;
             // 
-            // textBox26
+            // txtShirtQty
             // 
-            this.textBox26.Location = new System.Drawing.Point(1223, 91);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(148, 38);
-            this.textBox26.TabIndex = 17;
+            this.txtShirtQty.Location = new System.Drawing.Point(1223, 91);
+            this.txtShirtQty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtShirtQty.Name = "txtShirtQty";
+            this.txtShirtQty.Size = new System.Drawing.Size(148, 38);
+            this.txtShirtQty.TabIndex = 17;
             // 
-            // textBox27
+            // txtPantAmount
             // 
-            this.textBox27.Location = new System.Drawing.Point(1387, 39);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(191, 38);
-            this.textBox27.TabIndex = 18;
+            this.txtPantAmount.Location = new System.Drawing.Point(1387, 39);
+            this.txtPantAmount.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtPantAmount.Name = "txtPantAmount";
+            this.txtPantAmount.Size = new System.Drawing.Size(191, 38);
+            this.txtPantAmount.TabIndex = 18;
             // 
-            // textBox28
+            // txtPantQty
             // 
-            this.textBox28.Location = new System.Drawing.Point(1387, 91);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(191, 38);
-            this.textBox28.TabIndex = 19;
+            this.txtPantQty.Location = new System.Drawing.Point(1387, 91);
+            this.txtPantQty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtPantQty.Name = "txtPantQty";
+            this.txtPantQty.Size = new System.Drawing.Size(191, 38);
+            this.txtPantQty.TabIndex = 19;
             // 
-            // textBox29
+            // txtCoatAmount
             // 
-            this.textBox29.Location = new System.Drawing.Point(1594, 39);
-            this.textBox29.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(140, 38);
-            this.textBox29.TabIndex = 20;
+            this.txtCoatAmount.Location = new System.Drawing.Point(1594, 39);
+            this.txtCoatAmount.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtCoatAmount.Name = "txtCoatAmount";
+            this.txtCoatAmount.Size = new System.Drawing.Size(140, 38);
+            this.txtCoatAmount.TabIndex = 20;
             // 
-            // textBox30
+            // txtCoatQty
             // 
-            this.textBox30.Location = new System.Drawing.Point(1594, 91);
-            this.textBox30.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(140, 38);
-            this.textBox30.TabIndex = 21;
+            this.txtCoatQty.Location = new System.Drawing.Point(1594, 91);
+            this.txtCoatQty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtCoatQty.Name = "txtCoatQty";
+            this.txtCoatQty.Size = new System.Drawing.Size(140, 38);
+            this.txtCoatQty.TabIndex = 21;
             // 
-            // textBox31
+            // txtBundiAmount
             // 
-            this.textBox31.Location = new System.Drawing.Point(1750, 39);
-            this.textBox31.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(204, 38);
-            this.textBox31.TabIndex = 22;
+            this.txtBundiAmount.Location = new System.Drawing.Point(1750, 39);
+            this.txtBundiAmount.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtBundiAmount.Name = "txtBundiAmount";
+            this.txtBundiAmount.Size = new System.Drawing.Size(204, 38);
+            this.txtBundiAmount.TabIndex = 22;
             // 
-            // textBox32
+            // txtBundiQty
             // 
-            this.textBox32.Location = new System.Drawing.Point(1750, 91);
-            this.textBox32.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(204, 38);
-            this.textBox32.TabIndex = 23;
+            this.txtBundiQty.Location = new System.Drawing.Point(1750, 91);
+            this.txtBundiQty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtBundiQty.Name = "txtBundiQty";
+            this.txtBundiQty.Size = new System.Drawing.Size(204, 38);
+            this.txtBundiQty.TabIndex = 23;
             // 
-            // textBox33
+            // txtKurtaAmount
             // 
-            this.textBox33.Location = new System.Drawing.Point(1970, 39);
-            this.textBox33.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(119, 38);
-            this.textBox33.TabIndex = 24;
+            this.txtKurtaAmount.Location = new System.Drawing.Point(1970, 39);
+            this.txtKurtaAmount.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtKurtaAmount.Name = "txtKurtaAmount";
+            this.txtKurtaAmount.Size = new System.Drawing.Size(119, 38);
+            this.txtKurtaAmount.TabIndex = 24;
             // 
-            // textBox34
+            // txtKurtaQty
             // 
-            this.textBox34.Location = new System.Drawing.Point(1970, 91);
-            this.textBox34.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(119, 38);
-            this.textBox34.TabIndex = 25;
+            this.txtKurtaQty.Location = new System.Drawing.Point(1970, 91);
+            this.txtKurtaQty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtKurtaQty.Name = "txtKurtaQty";
+            this.txtKurtaQty.Size = new System.Drawing.Size(119, 38);
+            this.txtKurtaQty.TabIndex = 25;
             // 
-            // textBox35
+            // txtOthersAmount
             // 
-            this.textBox35.Location = new System.Drawing.Point(2174, 39);
-            this.textBox35.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(199, 38);
-            this.textBox35.TabIndex = 26;
+            this.txtOthersAmount.Location = new System.Drawing.Point(2174, 39);
+            this.txtOthersAmount.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtOthersAmount.Name = "txtOthersAmount";
+            this.txtOthersAmount.Size = new System.Drawing.Size(199, 38);
+            this.txtOthersAmount.TabIndex = 26;
             // 
-            // textBox36
+            // txtOthersQty
             // 
-            this.textBox36.Location = new System.Drawing.Point(2174, 91);
-            this.textBox36.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(199, 38);
-            this.textBox36.TabIndex = 27;
+            this.txtOthersQty.Location = new System.Drawing.Point(2174, 91);
+            this.txtOthersQty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtOthersQty.Name = "txtOthersQty";
+            this.txtOthersQty.Size = new System.Drawing.Size(199, 38);
+            this.txtOthersQty.TabIndex = 27;
             // 
             // btnAddTailoring
             // 
@@ -2680,6 +2684,7 @@
             this.btnAddTailoring.TabIndex = 28;
             this.btnAddTailoring.Text = "Add";
             this.btnAddTailoring.UseVisualStyleBackColor = true;
+            this.btnAddTailoring.Click += new System.EventHandler(this.btnAddTailoring_Click);
             // 
             // btnClearTailoring
             // 
@@ -2692,13 +2697,13 @@
             this.btnClearTailoring.UseVisualStyleBackColor = true;
             this.btnClearTailoring.Click += new System.EventHandler(this.btnClearTailoring_Click);
             // 
-            // textBox37
+            // txtTBTotalQty
             // 
-            this.textBox37.Location = new System.Drawing.Point(947, 91);
-            this.textBox37.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(260, 38);
-            this.textBox37.TabIndex = 30;
+            this.txtTBTotalQty.Location = new System.Drawing.Point(947, 91);
+            this.txtTBTotalQty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtTBTotalQty.Name = "txtTBTotalQty";
+            this.txtTBTotalQty.Size = new System.Drawing.Size(260, 38);
+            this.txtTBTotalQty.TabIndex = 30;
             // 
             // label43
             // 
@@ -3336,7 +3341,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(3204, 49);
+            this.menuStrip1.Size = new System.Drawing.Size(3204, 60);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip2";
             // 
@@ -3346,7 +3351,7 @@
             this.loginToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(87, 45);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(87, 56);
             this.toolStripMenuItem1.Text = "File";
             // 
             // loginToolStripMenuItem
@@ -3368,7 +3373,7 @@
             this.backupLocationToolStripMenuItem,
             this.backupToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 45);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 56);
             this.toolStripMenuItem2.Text = "Backup";
             // 
             // backupLocationToolStripMenuItem
@@ -3390,7 +3395,7 @@
             this.exportToolStripMenuItem,
             this.importToolStripMenuItem});
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(144, 45);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(144, 56);
             this.toolStripMenuItem3.Text = "Reports";
             // 
             // reportToolStripMenuItem
@@ -3419,7 +3424,7 @@
             this.reportHQToolStripMenuItem,
             this.syncCloudToolStripMenuItem});
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(129, 45);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(129, 56);
             this.toolStripMenuItem4.Text = "Admin";
             // 
             // updateToolStripMenuItem
@@ -3449,7 +3454,7 @@
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(104, 45);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(104, 56);
             this.toolStripMenuItem5.Text = "Help";
             // 
             // label106
@@ -3478,6 +3483,7 @@
             // 
             // gbHomeExp
             // 
+            this.gbHomeExp.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.gbHomeExp.Controls.Add(this.btnHEClear);
             this.gbHomeExp.Controls.Add(this.btnHEAdd);
             this.gbHomeExp.Controls.Add(this.txtHESlipNo);
@@ -3561,6 +3567,7 @@
             // 
             // gbAmitkumar
             // 
+            this.gbAmitkumar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.gbAmitkumar.Controls.Add(this.btnClearAmit);
             this.gbAmitkumar.Controls.Add(this.btnAddAmit);
             this.gbAmitkumar.Controls.Add(this.txtAKSlipNo);
@@ -3644,6 +3651,7 @@
             // 
             // gbCashInWard
             // 
+            this.gbCashInWard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.gbCashInWard.Controls.Add(this.btnClearCashInWard);
             this.gbCashInWard.Controls.Add(this.btnAddCashInward);
             this.gbCashInWard.Controls.Add(this.txtCIHSlipNo);
@@ -3793,6 +3801,7 @@
             // 
             // gbOtherHomeExp
             // 
+            this.gbOtherHomeExp.BackColor = System.Drawing.Color.SandyBrown;
             this.gbOtherHomeExp.Controls.Add(this.btnClearOtherHE);
             this.gbOtherHomeExp.Controls.Add(this.btnAddOtherHE);
             this.gbOtherHomeExp.Controls.Add(this.txtOHERemarks);
@@ -3921,7 +3930,7 @@
             this.tabPage6.Location = new System.Drawing.Point(10, 48);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(2484, 866);
+            this.tabPage6.Size = new System.Drawing.Size(2484, 855);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Data";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -3975,13 +3984,19 @@
             this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dgvData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.tASContextBindingSource, "Attendences", true));
+            this.dgvData.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.tASContextBindingSource, "Attendences", true));
             this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvData.Location = new System.Drawing.Point(3, 114);
             this.dgvData.Name = "dgvData";
             this.dgvData.RowHeadersWidth = 102;
             this.dgvData.RowTemplate.Height = 40;
-            this.dgvData.Size = new System.Drawing.Size(2478, 749);
+            this.dgvData.Size = new System.Drawing.Size(2478, 738);
             this.dgvData.TabIndex = 1;
+            // 
+            // tASContextBindingSource
+            // 
+            this.tASContextBindingSource.DataSource = typeof(AR_TASDumka.TASContext);
             // 
             // DashBoard
             // 
@@ -4072,6 +4087,7 @@
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tASContextBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4171,13 +4187,13 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.FlowLayoutPanel flpDelivery;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox textBox38;
+        private System.Windows.Forms.TextBox txtTDInvNo;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox txtTDAmount;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.DateTimePicker dtpTDDate;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.TextBox txtTDRemarks;
         private System.Windows.Forms.Button btnAddDelivery;
         private System.Windows.Forms.Button btnClearDelivery;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -4193,26 +4209,26 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.TextBox textBox34;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.DateTimePicker dtpTBDate;
+        private System.Windows.Forms.TextBox txtTBCustName;
+        private System.Windows.Forms.TextBox txtTBSlipNo;
+        private System.Windows.Forms.DateTimePicker dtpTBDeliveryDate;
+        private System.Windows.Forms.TextBox txtTBTotalAmount;
+        private System.Windows.Forms.TextBox txtShirtAmount;
+        private System.Windows.Forms.TextBox txtShirtQty;
+        private System.Windows.Forms.TextBox txtPantAmount;
+        private System.Windows.Forms.TextBox txtPantQty;
+        private System.Windows.Forms.TextBox txtCoatAmount;
+        private System.Windows.Forms.TextBox txtCoatQty;
+        private System.Windows.Forms.TextBox txtBundiAmount;
+        private System.Windows.Forms.TextBox txtBundiQty;
+        private System.Windows.Forms.TextBox txtKurtaAmount;
+        private System.Windows.Forms.TextBox txtKurtaQty;
+        private System.Windows.Forms.TextBox txtOthersAmount;
+        private System.Windows.Forms.TextBox txtOthersQty;
         private System.Windows.Forms.Button btnAddTailoring;
         private System.Windows.Forms.Button btnClearTailoring;
-        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.TextBox txtTBTotalQty;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label70;
@@ -4409,6 +4425,7 @@
         private System.Windows.Forms.Button btnTableUpdate;
         private System.Windows.Forms.ComboBox cbTableList;
         private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.BindingSource tASContextBindingSource;
     }
 }
 

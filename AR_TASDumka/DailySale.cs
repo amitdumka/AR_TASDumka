@@ -5,6 +5,50 @@ using System.Linq;
 
 namespace AR_TASDumka
 {
+    class Utils
+    {
+        public static void UpDateCashInHand(TASContext db, DateTime dateTime, double Amount)
+        {
+
+            {
+                CashInHand cashIn = db.CashInHands.Where(d => d.CIHDate == dateTime).FirstOrDefault();
+                if (cashIn != null)
+                {
+                    cashIn.CashInHandAmount += Amount;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    //Create CashBalance 
+                }
+
+            }
+        }
+        public static void UpDateCashInBank(TASContext db, DateTime dateTime, double Amount)
+        {
+
+            {
+                CashInBank cashIn = db.CashInBanks.Where(d => d.CIBDate == dateTime).FirstOrDefault();
+                if (cashIn != null)
+                {
+                    cashIn.CashInBankAmount += Amount;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    //Create CashBalance 
+                }
+
+            }
+        }
+
+    }
+
+    class PayMode
+    {
+        public int PayModeId { get; set; }
+        public string PayModeName { set; get; }
+    }
     class CashInHand
     {
         public int CashInHandId { get; set; }
@@ -235,7 +279,6 @@ namespace AR_TASDumka
         public double YearlyUnit { get; set; }
     }
 
-
     class TASContext : DbContext
     {
         public TASContext() : base("DB_TAS_Dumka")
@@ -243,7 +286,7 @@ namespace AR_TASDumka
             Database.SetInitializer<TASContext>(new CreateDatabaseIfNotExists<TASContext>());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<TASContext, AR_TASDumka.Migrations.Configuration>());
         }
-       
+
         public DbSet<DailySale> DailySales { get; set; }
         public DbSet<Expenses> Expenses { get; set; }
         public DbSet<BankDeposit> BankDeposits { get; set; }
@@ -260,6 +303,9 @@ namespace AR_TASDumka
         public DbSet<OtherHomeExpense> OtherHomeExpenses { get; set; }
         public DbSet<AmitKumarExpense> AmitKumarExpenses { get; set; }
         public DbSet<CashInward> CashInwards { get; set; }
+        public DbSet<CashInHand> CashInHands { get; set; }
+        public DbSet<CashInBank> CashInBanks { get; set; }
+        public DbSet<PayMode> PayModes { get; set; }
     }
 }
 
