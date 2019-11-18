@@ -1,10 +1,59 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace AR_TASDumka
 {
-
+    class CashInHand
+    {
+        public int CashInHandId { get; set; }
+        public DateTime CIHDate { get; set; }
+        public double OpenningBalance { get; set; }
+        public double ClosingBalance { get; set; }
+        public double CashInHandAmount { get; set; }
+    }
+    class CashInBank
+    {
+        public int CashInBankId { get; set; }
+        public DateTime CIBDate { get; set; }
+        public double OpenningBalance { get; set; }
+        public double ClosingBalance { get; set; }
+        public double CashInBankAmount { get; set; }
+    }
+    class CashInward
+    {
+        public int CashInwardId { get; set; }
+        public DateTime dateTime { get; set; }
+        public string RecieptFrom { get; set; }
+        public double Amount { get; set; }
+        public string SlipNo { get; set; }
+    }
+    class HomeExpense
+    {
+        public int HomeExpenseId { get; set; }
+        public DateTime dateTime { get; set; }
+        public string PaidTo { get; set; }
+        public double Amount { get; set; }
+        public string SlipNo { get; set; }
+    }
+    class OtherHomeExpense
+    {
+        public int OtherHomeExpenseId { get; set; }
+        public DateTime dateTime { get; set; }
+        public string PaidTo { get; set; }
+        public double Amount { get; set; }
+        public string SlipNo { get; set; }
+        public string Remarks { get; set; }
+    }
+    class AmitKumarExpense
+    {
+        public int AmitKumarExpenseId { get; set; }
+        public DateTime dateTime { get; set; }
+        public string PaidTo { get; set; }
+        public double Amount { get; set; }
+        public string SlipNo { get; set; }
+    }
     class DailySale
     {
         public int DailySaleId { get; set; }
@@ -185,13 +234,16 @@ namespace AR_TASDumka
         public double YearlyBooking { get; set; }
         public double YearlyUnit { get; set; }
     }
+
+
     class TASContext : DbContext
     {
         public TASContext() : base("DB_TAS_Dumka")
         {
             Database.SetInitializer<TASContext>(new CreateDatabaseIfNotExists<TASContext>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TASContext, AR_TASDumka.Migrations.Configuration>());
         }
-
+       
         public DbSet<DailySale> DailySales { get; set; }
         public DbSet<Expenses> Expenses { get; set; }
         public DbSet<BankDeposit> BankDeposits { get; set; }
@@ -204,5 +256,10 @@ namespace AR_TASDumka
         public DbSet<AdvancePayment> AdvancePayments { get; set; }
         public DbSet<AdvanceReceipt> AdvanceReceipts { get; set; }
         public DbSet<SalaryPayment> SalaryPayments { get; set; }
+        public DbSet<HomeExpense> HomeExpenses { get; set; }
+        public DbSet<OtherHomeExpense> OtherHomeExpenses { get; set; }
+        public DbSet<AmitKumarExpense> AmitKumarExpenses { get; set; }
+        public DbSet<CashInward> CashInwards { get; set; }
     }
 }
+
