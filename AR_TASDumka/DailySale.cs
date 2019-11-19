@@ -11,11 +11,11 @@ namespace AR_TASDumka
         {
 
             {
-                CashInHand cashIn = db.CashInHands.Where(d => d.CIHDate == dateTime).FirstOrDefault();
-                if (cashIn != null)
+                CashInHand cashIn = db.CashInHands.Where (d => d.CIHDate == dateTime).FirstOrDefault ();
+                if ( cashIn != null )
                 {
                     cashIn.CashInHandAmount += Amount;
-                    db.SaveChanges();
+                    db.SaveChanges ();
                 }
                 else
                 {
@@ -28,11 +28,11 @@ namespace AR_TASDumka
         {
 
             {
-                CashInBank cashIn = db.CashInBanks.Where(d => d.CIBDate == dateTime).FirstOrDefault();
-                if (cashIn != null)
+                CashInBank cashIn = db.CashInBanks.Where (d => d.CIBDate == dateTime).FirstOrDefault ();
+                if ( cashIn != null )
                 {
                     cashIn.CashInBankAmount += Amount;
-                    db.SaveChanges();
+                    db.SaveChanges ();
                 }
                 else
                 {
@@ -44,6 +44,18 @@ namespace AR_TASDumka
 
     }
 
+    class EndOfDay
+    {
+        public int EndOfDayId { get; set; }
+        public DateTime EOD_Date { get; set; }
+        public string Shirting { get; set; }
+        public string Suiting { get; set; }
+        public string USPA { get; set; }
+        public string FM_Arrow { get; set; }
+        public string RWT { get; set; }
+        public string Access { get; set; }
+        public string Tailoring { get; set; }
+    }
     class PayMode
     {
         public int PayModeId { get; set; }
@@ -136,9 +148,7 @@ namespace AR_TASDumka
         public string Details { get; set; }
         public string Remarks { get; set; }
     }
-
-
-    public class TalioringBooking
+    class TalioringBooking
     {
         public int TalioringBookingId { get; set; }
         public DateTime BookingDate { get; set; }
@@ -161,8 +171,7 @@ namespace AR_TASDumka
         public double KurtaPrice { get; set; }
 
     }
-
-    public class TalioringDelivery
+    class TalioringDelivery
     {
         public int TalioringDeliveryId { get; set; }
         public DateTime DeliveryDate { get; set; }
@@ -171,8 +180,6 @@ namespace AR_TASDumka
         public double Amount { get; set; }
 
     }
-
-
     class Payments
     {
         public int PaymentsId { get; set; }
@@ -224,7 +231,6 @@ namespace AR_TASDumka
         public double SaleAdjustest { get; set; }
         public double TotalFixedSale { get; set; }
     }
-
     class Emp
     {
         public int EmpId { get; set; }
@@ -233,7 +239,6 @@ namespace AR_TASDumka
         public DateTime JoiningDate { get; set; }
 
     }
-
     class SalaryPayment
     {
         public int SalaryPaymentId { get; set; }
@@ -264,7 +269,6 @@ namespace AR_TASDumka
         public string PayMode { get; set; }
         public string Details { get; set; }
     }
-
     class TailoringReport
     {
         public double TodaySale { get; set; }
@@ -278,13 +282,12 @@ namespace AR_TASDumka
         public double YearlyBooking { get; set; }
         public double YearlyUnit { get; set; }
     }
-
     class TASContext : DbContext
     {
-        public TASContext() : base("DB_TAS_Dumka")
+        public TASContext() : base ("DB_TAS_Dumka")
         {
-            Database.SetInitializer<TASContext>(new CreateDatabaseIfNotExists<TASContext>());
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TASContext, AR_TASDumka.Migrations.Configuration>());
+            Database.SetInitializer<TASContext> (new CreateDatabaseIfNotExists<TASContext> ());
+            Database.SetInitializer (new MigrateDatabaseToLatestVersion<TASContext, AR_TASDumka.Migrations.Configuration> ());
         }
 
         public DbSet<DailySale> DailySales { get; set; }
