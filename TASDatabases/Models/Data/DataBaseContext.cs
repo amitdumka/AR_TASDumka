@@ -1,21 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Text;
 
-namespace AR_TASDumka
+namespace TASDatabases.Models.Data
 {
+    class DataBaseContext
+    {
+    }
     public class Utils
     {
         public static void UpDateCashInHand(TASContext db, DateTime dateTime, double Amount)
         {
 
             {
-                CashInHand cashIn = db.CashInHands.Where (d => d.CIHDate == dateTime).FirstOrDefault ();
-                if ( cashIn != null )
+                CashInHand cashIn = db.CashInHands.Where(d => d.CIHDate == dateTime).FirstOrDefault();
+                if (cashIn != null)
                 {
                     cashIn.CashInHandAmount += Amount;
-                    db.SaveChanges ();
+                    db.SaveChanges();
                 }
                 else
                 {
@@ -28,11 +32,11 @@ namespace AR_TASDumka
         {
 
             {
-                CashInBank cashIn = db.CashInBanks.Where (d => d.CIBDate == dateTime).FirstOrDefault ();
-                if ( cashIn != null )
+                CashInBank cashIn = db.CashInBanks.Where(d => d.CIBDate == dateTime).FirstOrDefault();
+                if (cashIn != null)
                 {
                     cashIn.CashInBankAmount += Amount;
-                    db.SaveChanges ();
+                    db.SaveChanges();
                 }
                 else
                 {
@@ -282,12 +286,12 @@ namespace AR_TASDumka
         public double YearlyBooking { get; set; }
         public double YearlyUnit { get; set; }
     }
-    public  class TASContext : DbContext
+    public class TASContext : DbContext
     {
-        public TASContext() : base ("DB_TAS_Dumka")
+        public TASContext() : base("DB_TAS_Dumka")
         {
-            Database.SetInitializer<TASContext> (new CreateDatabaseIfNotExists<TASContext> ());
-            Database.SetInitializer (new MigrateDatabaseToLatestVersion<TASContext, AR_TASDumka.Migrations.Configuration> ());
+            Database.SetInitializer<TASContext>(new CreateDatabaseIfNotExists<TASContext>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TASContext, TASDatabases.Migrations.Configuration>());
         }
 
         public DbSet<DailySale> DailySales { get; set; }
@@ -311,4 +315,3 @@ namespace AR_TASDumka
         public DbSet<PayMode> PayModes { get; set; }
     }
 }
-
